@@ -1,11 +1,9 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useGetPhoto } from '../hook/useGetPhoto';
-import { Container } from 'react-bootstrap';
 import ShowDetailPhoto from '../components/ShowDetailPhoto';
 
 const PhotoDetail = () => {
     const { id } = useParams<{ id: string }>();
-    const navigate = useNavigate();
     const { photo, loading } = useGetPhoto(id!);
 
     if (loading) {
@@ -17,10 +15,9 @@ const PhotoDetail = () => {
     }
 
     return (
-        <Container>
-            <button onClick={() => navigate(-1)}>Go Back</button>
+        <>
             <ShowDetailPhoto photo={photo} />
-        </Container>
+        </>
     );
 };
 

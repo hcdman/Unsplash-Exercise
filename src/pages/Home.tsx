@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { IPhoto } from '../types/Iphoto';
 import { useGetAllPhotos } from '../hook/useGetAllPhotos';
 import ShowPhoto from '../components/ShowPhoto';
@@ -12,13 +12,7 @@ const Home = () => {
             }
         }
     };
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, [loading, hasMore]);
-
+    window.addEventListener("scroll", handleScroll);
     return (
         <>
             <div style={{ display: 'flex', flexWrap: 'wrap' }}>

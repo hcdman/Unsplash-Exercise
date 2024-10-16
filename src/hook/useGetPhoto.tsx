@@ -19,7 +19,7 @@ export const useGetPhoto = (id: string) => {
 
     useEffect(() => {
         fetchPhoto();
-    }, [id]); // Add `id` to the dependency array to refetch when it changes.
+    }, []);
 
     return { photo, loading };
 };
