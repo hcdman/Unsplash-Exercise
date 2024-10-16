@@ -19,7 +19,8 @@ export const useGetAllPhotos = (page: number) => {
         } catch (error) {
             console.error('Error fetching photos:', error);
         } finally {
-            setLoading(false);
+            const minLoadingDuration = 2000;
+            setTimeout(() => setLoading(false), minLoadingDuration);
         }
     };
     useEffect(() => {

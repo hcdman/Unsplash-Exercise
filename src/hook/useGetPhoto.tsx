@@ -13,7 +13,8 @@ export const useGetPhoto = (id: string) => {
         } catch (error) {
             console.error('Error fetching photo:', error);
         } finally {
-            setLoading(false);
+            const minLoadingDuration = 1000;
+            setTimeout(() => setLoading(false), minLoadingDuration);
         }
     };
 
