@@ -5,11 +5,14 @@ export interface IPhoto {
     urls: {
         thumb: string;
         full: string;
+        regular: string;
     };
+    width: number
+    height: number
     user: {
         name: string;
         profile_image: {
-            small: string;
+            large: string;
         };
     };
 }

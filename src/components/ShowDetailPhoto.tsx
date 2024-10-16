@@ -1,34 +1,38 @@
 import { IPhoto } from "../types/Iphoto";
-import { Card, CardContent, CardMedia, Typography } from '@mui/material';
+import { Card } from 'react-bootstrap';
 
 interface ShowDetailProps {
     photo: IPhoto;
 }
+
 const ShowDetailPhoto = ({ photo }: ShowDetailProps) => {
     return (
-        <Card>
-            <CardMedia
-                sx={{ height: 2000 }}
-                image={photo.urls.full}
+        <Card className="shadow" style={{ marginBottom: '20px' }}>
+            <Card.Img
+                variant="top"
+                src={photo.urls.full}
+                alt={photo.alt_description || 'No description'}
+                style={{ objectFit: 'cover', width: '100%' }}
             />
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                    {photo.alt_description || 'No description'}
-                </Typography>
 
-                {/* Move the div containing the image and user name outside Typography */}
-                <div style={{ marginTop: '20px', display: 'flex', alignItems: 'center' }}>
+            <Card.Body>
+                <Card.Title>Photo description</Card.Title>
+                <i style={{ fontSize: '20px' }}>{photo.alt_description || 'No description'}</i>
+                <hr />
+                <h6>Size: {photo.width} x {photo.height}</h6>
+                <hr />
+                <Card.Title>Photo by</Card.Title>
+                <div className="d-flex align-items-center mt-3">
                     <img
-                        src={photo.user.profile_image.small}
+                        src={photo.user.profile_image.large}
                         alt={photo.user.name}
-                        style={{ width: '40px', borderRadius: '50%', marginRight: '10px' }}
+                        style={{ width: '40px', height: '40px', borderRadius: '50%', marginRight: '10px' }}
                     />
-                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                        {photo.user.name}
-                    </Typography>
+                    <span className="text-muted">{photo.user.name}</span>
                 </div>
-            </CardContent>
+            </Card.Body>
         </Card>
-    )
-}
-export default ShowDetailPhoto
+    );
+};
+
+export default ShowDetailPhoto;
