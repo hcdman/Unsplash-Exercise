@@ -1,50 +1,36 @@
-# React + TypeScript + Vite
+# UNSPLASH EXERCISE
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive photo gallery app that fetches images from the Unsplash API. Built using modern web technologies like React, TypeScript.
 
-Currently, two official plugins are available:
+## 🚀 Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **TypeScript**
+- **React**
+- **Axios**
+- **Vite**
 
-## Expanding the ESLint configuration
+## 📖 How to Use
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To clone and run this application, follow these steps:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. **Clone this repository:**
+   ```bash
+   git clone https://github.com/hcdman/Unsplash-Exercise.git
+2. **Navigate into the repository:**
+   ```bash
+   cd unsplash_exercise
+3. **Install dependencies:**
+   ```bash
+   npm install
+4. **Set up Unsplash API access key:**
+- Follow the instruction on how to get the API key here: [Unsplash API Documentation](https://unsplash.com/documentation#getting-started)
+5. **Create `.env` file:**
+- In the root directory, create a `.env` file with the following content:
+  ```bash
+  VITE_API_KEY = your-access-key
+  VITE_BASE_API_URL = https://api.unsplash.com
+6. **Run the app:**
+   ```bash
+   npm run dev
+## 🔗 Demo
+Click [here](https://unsplash-exercise.vercel.app/) to check out the photo gallery.
